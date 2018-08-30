@@ -2,21 +2,22 @@ package com.texo.entity;
 
 import javax.persistence.*;
 
+@Entity(name = "city")
 public class City {
 
     @Id
     @GeneratedValue
-    @Column(name = "ID")
+    @Column(name = "id")
     private long id;
 
-    @Column(name = "NAME")
-    private long name;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "CAPITAL")
+    @Column(name = "capital")
     private boolean capital;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name="UNIVERSITY_ID")
+    @JoinColumn(name="uf_code")
     private State state;
 
     public long getId() {
@@ -27,11 +28,11 @@ public class City {
         this.id = id;
     }
 
-    public long getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(long name) {
+    public void setName(String name) {
         this.name = name;
     }
 

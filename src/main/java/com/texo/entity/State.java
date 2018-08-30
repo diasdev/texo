@@ -2,44 +2,31 @@ package com.texo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "state")
 public class State {
 
     @Id
-    @GeneratedValue
-    @Column(name = "ID")
-    private long id;
+    @Column(name = "uf_code", unique = true)
+    private String code;
 
-    @Column(name = "CODE")
-    private long code;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "NAME")
-    private long name;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(long code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public long getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(long name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
