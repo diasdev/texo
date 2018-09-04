@@ -13,9 +13,12 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "cities", path = "cities", exported = false)
 public interface CityRepository extends PagingAndSortingRepository<City, Long> {
-    //List<City> findByName(@Param("name") String name);
-
     List<City> findAll(Sort sort);
+
+    City findById(long id);
+
+    @Query("select c from city c where c.state.code = ?1")
+    List<City> findByState(String UFCode);
 
     @Query("select c from city c where c.capital = true")
     List<City> findCapitals(Sort sort);

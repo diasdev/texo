@@ -20,8 +20,17 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
+    public City findById(long id) {
+        return cityRepository.findById(id);
+    }
+
+    @Override
     public List<City> findCapitals() {
-        return cityRepository.findAll(new Sort(Sort.Direction.ASC, "name"));
+        return cityRepository.findCapitals(new Sort(Sort.Direction.ASC, "name"));
+    }
+
+    public List<City> findByState(String UFCode) {
+        return cityRepository.findByState(UFCode);
     }
 
     @Override
