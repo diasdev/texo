@@ -1,7 +1,9 @@
 package com.texo.controller;
 
+import com.texo.criteria.SearchCriteria;
 import com.texo.entity.City;
 import com.texo.service.CityService;
+import com.texo.specification.CitySpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -17,26 +19,20 @@ public class CityController {
     @Autowired
     CityService cityService;
 
-    @GetMapping("/all")
-    public List<City> getAllCities(){
-        return cityService.findAll();
-    }
+    @GetMapping(value = {"", "/", "/all"})
+    public ResponseEntity<List<City>> getAllCities(@RequestParam(value = "ufcode", required = false) String UFCode){
 
-    @GetMapping("/capitals")
-    public List<City> getCapitals(){
-        return cityService.findCapitals();
-    }
-
-    @GetMapping("/by_state")
-    public ResponseEntity<List<City>> getCitiesByUFCode(
-            @RequestParam(value = "uf_code", required = false) String UFCode) {
-
-        List<City> response = cityService.findByState(UFCode);
+        List<City> response = cityService.findAll(UFCode == null ? null : UFCode.toUpperCase());
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("X-Total-Count", String.valueOf(response.size()));
 
         return ResponseEntity.ok().headers(responseHeaders).body(response);
+    }
+
+    @GetMapping("/capitals")
+    public List<City> getCapitals(){
+        return cityService.findCapitals();
     }
 
     @DeleteMapping("/{id}")
