@@ -12,7 +12,7 @@ public class DatabaseConnection {
         //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jcg", "root", "toor");
 
         Class.forName ("org.h2.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:h2:~/cities", "sa", "");
+        Connection connection = DriverManager.getConnection("jdbc:h2:file:~/cities", "sa", "");
 
         return connection;
     }

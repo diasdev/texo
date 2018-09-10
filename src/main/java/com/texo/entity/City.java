@@ -6,7 +6,6 @@ import javax.persistence.*;
 public class City {
 
     @Id
-    @GeneratedValue
     @Column(name = "ibge_id")
     private long id;
 
