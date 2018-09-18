@@ -1,9 +1,7 @@
 package com.texo.controller;
 
-import com.texo.criteria.SearchCriteria;
 import com.texo.entity.City;
 import com.texo.service.CityService;
-import com.texo.specification.CitySpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +11,7 @@ import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cities")
+@RequestMapping("/city")
 public class CityController {
 
     @Autowired
