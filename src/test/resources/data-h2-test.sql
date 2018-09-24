@@ -1,3 +1,7 @@
+INSERT INTO state (uf_code, name) VALUES ('PR', 'Paraná');
+INSERT INTO state (uf_code, name) VALUES ('SC', 'Santa Catarina');
+INSERT INTO state (uf_code, name) VALUES ('RS', 'Rio Grande do Sul');
+
 INSERT INTO city (ibge_id, name, capital, uf_code, latitude, longitude, name_no_diacritics, alternative_names, microregion, mesoregion) VALUES (4106902, 'Curitiba', true, 'PR', -25.432956, -49.27184789, 'Curitiba', '', 'Curitiba', 'Metropolitana de Curitiba');
 INSERT INTO city (ibge_id, name, capital, uf_code, latitude, longitude, name_no_diacritics, alternative_names, microregion, mesoregion) VALUES (4104808, 'Cascavel', false, 'PR', -24.9537975, -53.45972218, 'Cascavel', '', 'Cascavel', 'Oeste Paranaense');
 INSERT INTO city (ibge_id, name, capital, uf_code, latitude, longitude, name_no_diacritics, alternative_names, microregion, mesoregion) VALUES (4104501, 'Capanema', false, 'PR', -25.68297742, -53.8001787, 'Capanema', '', 'Capanema', 'Sudoeste Paranaense');

@@ -1,7 +1,6 @@
 package com.texo.service;
 
 import com.texo.entity.City;
-import com.texo.specification.CitySpecification;
 
 import java.util.List;
 

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="ISO-8859-1">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/data-h2.sql" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/test/resources/data-h2.sql" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/data-dev.sql" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/data-h2-test.sql" charset="ISO-8859-1" />
     <file url="PROJECT" charset="ISO-8859-1" />
   </component>
 </project>

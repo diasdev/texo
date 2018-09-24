@@ -7,7 +7,7 @@ public class City {
 
     @Id
     @Column(name = "ibge_id")
-    private long id;
+    private Long id;
 
     @Column(name = "name")
     private String name;

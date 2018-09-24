@@ -33,8 +33,13 @@ public class CityController {
         return cityService.findCapitals();
     }
 
+    @GetMapping("/{id}")
+    public City getById(@PathVariable("id") Long id){
+        return cityService.findById(id);
+    }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathParam(value = "id") long id) {
+    public void delete(@PathVariable(value = "id") Long id) {
         City city = cityService.findById(id);
 
         cityService.delete(city);
